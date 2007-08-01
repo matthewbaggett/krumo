@@ -2,7 +2,7 @@
 /**
 * Krumo: Structured information display solution
 *
-* Krumo is a debugging tool (PHP4/PHP5), which displays structured information 
+* Krumo is a debugging tool (PHP5 only), which displays structured information 
 * about any PHP variable. It is a nice replacement for print_r() or var_dump() 
 * which are used by a lot of PHP developers. 
 *
