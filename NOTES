@@ -1,0 +1,12 @@
+
+- http://sourceforge.net/projects/krumo/develop
+- nice krumo implementation : http://drupal.org/project/krumo, http://drupal.org/project/devel
+
+output into var:
+
+```
+ob_start();
+krumo($array);
+$variable = ob_get_contents();
+ob_end_clean();
+```
