@@ -67,7 +67,7 @@ Class krumo {
 	* @access public
 	* @static
 	*/
-	Public Static Function version() {
+	public static function version() {
 		return '0.2.1a';
 		}
 
@@ -79,7 +79,7 @@ Class krumo {
 	* @access public
 	* @static
 	*/
-	Public Static Function backtrace() {
+	public static function backtrace() {
 
 		// disabled ?
 		//
@@ -98,7 +98,7 @@ Class krumo {
 	* @access public
 	* @static
 	*/
-	Public Static Function classes() {
+	public static function classes() {
 
 		// disabled ?
 		//
@@ -122,7 +122,7 @@ This is a list of all currently declared classes.
 	* @access public
 	* @static
 	*/
-	Public Static Function interfaces() {
+	public static function interfaces() {
 
 		// disabled ?
 		//
@@ -146,7 +146,7 @@ This is a list of all currently declared interfaces.
 	* @access public
 	* @static
 	*/
-	Public Static Function includes() {
+	public static function includes() {
 
 		// disabled ?
 		//
@@ -170,7 +170,7 @@ This is a list of all currently included (or required) files.
 	* @access public
 	* @static
 	*/
-	Public Static Function functions() {
+	public static function functions() {
 
 		// disabled ?
 		//
@@ -194,7 +194,7 @@ This is a list of all currently declared functions.
 	* @access public
 	* @static
 	*/
-	Public Static Function defines() {
+	public static function defines() {
 
 		// disabled ?
 		//
@@ -218,7 +218,7 @@ This is a list of all currently declared constants (defines).
 	* @access public
 	* @static
 	*/
-	Public Static Function extensions() {
+	public static function extensions() {
 
 		// disabled ?
 		//
@@ -242,7 +242,7 @@ This is a list of all currently loaded PHP extensions.
 	* @access public
 	* @static
 	*/
-	Public Static Function headers() {
+	public static function headers() {
 
 		// disabled ?
 		//
@@ -266,7 +266,7 @@ This is a list of all HTTP request headers.
 	* @access public
 	* @static
 	*/
-	Public Static Function phpini() {
+	public static function phpini() {
 
 		// disabled ?
 		//
@@ -294,7 +294,7 @@ This is a list of the configuration settings read from <code><b><?php echo get_c
 	* @access public
 	* @static
 	*/
-	Public Static Function conf() {
+	public static function conf() {
 
 		// disabled ?
 		//
@@ -318,7 +318,7 @@ This is a list of all your configuration settings.
 	* @access public
 	* @static
 	*/
-	Public Static Function path() {
+	public static function path() {
 
 		// disabled ?
 		//
@@ -342,7 +342,7 @@ This is a list of the specified directories under your <code><b>include_path</b>
 	* @access public
 	* @static
 	*/
-	Public Static Function request() {
+	public static function request() {
 
 		// disabled ?
 		//
@@ -366,7 +366,7 @@ This is a list of all the values from the <code><b>$_REQUEST</b></code> array.
 	* @access public
 	* @static
 	*/
-	Public Static Function get() {
+	public static function get() {
 
 		// disabled ?
 		//
@@ -390,7 +390,7 @@ This is a list of all the values from the <code><b>$_GET</b></code> array.
 	* @access public
 	* @static
 	*/
-	Public Static Function post() {
+	public static function post() {
 
 		// disabled ?
 		//
@@ -414,7 +414,7 @@ This is a list of all the values from the <code><b>$_POST</b></code> array.
 	* @access public
 	* @static
 	*/
-	Public Static Function server() {
+	public static function server() {
 
 		// disabled ?
 		//
@@ -438,7 +438,7 @@ This is a list of all the values from the <code><b>$_SERVER</b></code> array.
 	* @access public
 	* @static
 	*/
-	Public Static Function cookie() {
+	public static function cookie() {
 
 		// disabled ?
 		//
@@ -462,7 +462,7 @@ This is a list of all the values from the <code><b>$_COOKIE</b></code> array.
 	* @access public
 	* @static
 	*/
-	Public Static Function env() {
+	public static function env() {
 
 		// disabled ?
 		//
@@ -486,7 +486,7 @@ This is a list of all the values from the <code><b>$_ENV</b></code> array.
 	* @access public
 	* @static
 	*/
-	Public Static Function session() {
+	public static function session() {
 
 		// disabled ?
 		//
@@ -512,7 +512,7 @@ This is a list of all the values from the <code><b>$_SESSION</b></code> array.
 	* @access public
 	* @static
 	*/
-	Public Static Function ini($ini_file) {
+	public static function ini($ini_file) {
 
 		// disabled ?
 		//
@@ -545,7 +545,7 @@ This is a list of all the values from the <code><b><?php echo realpath($ini_file
 	* @access public
 	* @static
 	*/
-	Public Static Function dump($data) {
+	public static function dump($data) {
 
 		// disabled ?
 		//
@@ -696,7 +696,7 @@ This is a list of all the values from the <code><b><?php echo realpath($ini_file
 			// fix the urls
 			//
 			$css_url = krumo::_config('css', 'url') . "skins/{$skin}/";
-			$css = preg_replace('~%url%~Uis', $css_url, $css);
+			$css = preg_replace('~%url%~Uis', './', $css);
 			
 			// the CSS
 			//
@@ -733,7 +733,7 @@ This is a list of all the values from the <code><b><?php echo realpath($ini_file
 	* @access public
 	* @static
 	*/
-	Public Static Function enable() {
+	public static function enable() {
 		return true === krumo::_debug(true);
 		}
 
@@ -744,7 +744,7 @@ This is a list of all the values from the <code><b><?php echo realpath($ini_file
 	* @access public
 	* @static
 	*/
-	Public Static Function disable() {
+	public static function disable() {
 		return false === krumo::_debug(false);
 		}
 	
