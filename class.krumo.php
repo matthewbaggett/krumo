@@ -603,19 +603,16 @@ This is a list of all the values from the <code><b><?php echo realpath($ini_file
 		//
 		$_recursion_marker = krumo::_marker();
 		if ($hive =& krumo::_hive($dummy)) {
-			foreach($hive as $i => &$bee){
+			foreach($hive as $i=>$bee){
 				if (is_object($bee)) {
-					  unset($hive[$i]->$_recursion_marker);
-					} else {
-            $bee[$_recursion_marker] = null;
-            foreach($bee as $k => $v){
-              if($k == $_recursion_marker){
-                unset($bee[$k]);
-              }
-            }
-					}
-				}
-			}
+					unset($hive[$i]->$_recursion_marker);
+        } elseif(is_array($bee)) {
+				  unset($hive[$i][$_recursion_marker]);
+        }else{
+          unset($hive[$i]);
+        }
+      }
+    }
 
 		// PHP 4.x.x array reference bug...
 		//
