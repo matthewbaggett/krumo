@@ -970,29 +970,27 @@ This is a list of all the values from the <code><b><?php echo realpath($ini_file
 
 	// keys ?
 	//
-	$keys = ($_is_object)
-		? array_keys(get_object_vars($data))
-		: array_keys($data);
-	
-	// itterate 
-	//
-	foreach($keys as $k) {
+    if ($_is_object) {
+      $refl = new ReflectionClass($data);
+      foreach ($refl->getProperties() as $property) {
+        $k = $property->getName();
+        if ($k === $_recursion_marker) {
+          continue;
+        }
 
-		// skip marker
-		//
-		if ($k === $_recursion_marker) {
-			continue;
-			}
-		
-		// get real value
-		//
-		if ($_is_object) {
-			$v =& $data->$k;
-			} else {
-			$v =& $data[$k];
-			}
-
-		krumo::_dump($v,$k);
+        $property->setAccessible(TRUE);
+        $v = $property->getValue($data);
+        krumo::_dump($v, $k);
+      }
+    } else {
+      foreach($data as $k => &$v) {
+        // skip marker
+        //
+        if ($k === $_recursion_marker) {
+          continue;
+        }
+        krumo::_dump($v,$k);
+      }
 		} ?>
 	</ul>
 </div>
